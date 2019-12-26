@@ -113,7 +113,7 @@ def main(data, date, length):
         print(f'used {end - start}')
         results_dict[date]['time'] = end - start
         print('####################################################################################################')
-    with open('predicted_results.json', 'w') as f:
+    with open('predicted_results_2018Q4.json', 'w') as f:
         json.dump(results_dict, f)
     print('Results file generated')
 
@@ -121,4 +121,4 @@ def main(data, date, length):
 if __name__ == '__main__':
     path = 'Data/Hourly_Temp_Humi_Load-7.csv'
     df = pd.read_csv(path)
-    main(df, '2018-11-05', 10)
+    main(df, '2018-10-01', 92)

@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c3b105a-8fab-4707-8e5c-dbb75f76d538" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Models/TM.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/TM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temperature_Prediction/Models/DR.py" beforeDir="false" afterPath="$PROJECT_DIR$/Temperature_Prediction/Models/DR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Forecasting System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Forecasting System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,26 +25,22 @@
   </component>
   <component name="ProjectId" id="1UTzbPELn2fwLS6sRapArVTbayX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Temperature_Prediction" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="DR (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -161,6 +158,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -179,10 +188,46 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="508" y="195" key="FileChooserDialogImpl" timestamp="1575500480225">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="508" y="195" key="FileChooserDialogImpl/0.23.1440.823@0.23.1440.823" timestamp="1575500480225" />
+    <state width="1379" height="198" key="GridCell.Tab.0.bottom" timestamp="1575679578725">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state width="1379" height="198" key="GridCell.Tab.0.bottom/0.23.1440.814@0.23.1440.814" timestamp="1575679578725" />
+    <state width="1379" height="199" key="GridCell.Tab.0.bottom/0.23.1440.816@0.23.1440.816" timestamp="1575514368686" />
+    <state width="1379" height="198" key="GridCell.Tab.0.center" timestamp="1575679578723">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state width="1379" height="198" key="GridCell.Tab.0.center/0.23.1440.814@0.23.1440.814" timestamp="1575679578723" />
+    <state width="1379" height="199" key="GridCell.Tab.0.center/0.23.1440.816@0.23.1440.816" timestamp="1575514368684" />
+    <state width="1379" height="198" key="GridCell.Tab.0.left" timestamp="1575679578722">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state width="1379" height="198" key="GridCell.Tab.0.left/0.23.1440.814@0.23.1440.814" timestamp="1575679578722" />
+    <state width="1379" height="199" key="GridCell.Tab.0.left/0.23.1440.816@0.23.1440.816" timestamp="1575514368683" />
+    <state width="1379" height="198" key="GridCell.Tab.0.right" timestamp="1575679578724">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state width="1379" height="198" key="GridCell.Tab.0.right/0.23.1440.814@0.23.1440.814" timestamp="1575679578724" />
+    <state width="1379" height="199" key="GridCell.Tab.0.right/0.23.1440.816@0.23.1440.816" timestamp="1575514368685" />
+    <state x="229" y="73" key="SettingsEditor" timestamp="1575500486480">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="229" y="73" key="SettingsEditor/0.23.1440.823@0.23.1440.823" timestamp="1575500486480" />
+    <state x="385" y="161" key="search.everywhere.popup" timestamp="1575584534925">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state x="385" y="161" key="search.everywhere.popup/0.23.1440.814@0.23.1440.814" timestamp="1575584534925" />
   </component>
 </project>
