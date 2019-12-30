@@ -1,0 +1,34 @@
+This project is used to improve operation efficiency for a large manufactor of snacks using optimization mechanism.
+
+##3.1 Input Data
+Input data will be an excel file contains many sheets from data preprocessing output (See Documentation.ipnb). 
+
+Sheet Flavor_Prod: a list of Cat_Flavor (product category plus flavor) and BDC that belongs to that category. 
+Sheet S: a list of Cat_Flavor and source warehouse that has that Cat_Flavor category.
+Sheet S2: an unstacked table with Cat_Flavor as index and source warehouse as columns. This makes indexing easy when looking up how many supplies each source warehouse has for each Cat_Flavor.
+Sheet D: a list of Cat_Flavor and destination warehouse that has that Cat_Flavor category.
+Sheet D2: an unstacked table with Cat_Flavor as index and destination warehouse as columns. This makes indexing easy when looking up how many demands each destination warehouse has for each Cat_Flavor.
+T: an unstacked table with source warehouse as index and destination warehouse as column. This makes indexing easy when looking up how much it costs to ship one standard case unit from a particular source warehouse to destination warehouse.  
+
+##3.2 Output for Optimization
+The output file would be output two sheets: objective and result. 
+Sheet Summary: this simply contains the final transportation cost from gurobi output.
+Sheet Solution: a spreadsheet displaying how many quantities to ship from a source warehouse to a destination warehouse.
+
+##3.3 Decision Variables, Objectives, and Constraints
+###Objective:
+Our main objective is to minimize total transportation cost by shipping items with cheaper transportation cost under the same product category and flavor. Therefore, we first concatenated product category and flavor for each product. This unique combination for each category plus each flavor is reference as Cat_Flavor, and we only run optimization on products whose Cat_Flavor has at least two unique BDC, or there is no room for substitution. This will help relaxing supply and constraint to Cat_Flavor level instead of product level. For instance, for Cat_Flavor BAKENETS-hot at source warehouse ABERDEEN PLANT-RETAIL, if item A and B from this group each has 10 quantity, then the total supply for would increase to 20. Supply and demand remain the same, and we are optimizing shipping quantity and route, thus we only consider minimizing transportation cost for all routes and ignore costs incurred at source warehouse and destination warehouse.
+
+###Decision Variables:
+Decision would be how many of each product (reference using BDC) to ship from source warehouse i to destination warehouse j, which was denoted as x. To fasten processing time, we relax decision variable type to continuous, for Frito Lay can easily convert the final output to integer with limited effort. 
+
+Another trick to shorten processing time was to add an auxiliary variable y being the sum of all product quantity shipped for each route, which then simplifies the objective function and reduced number of operations in the objective function than summing x. 
+ 
+However, simply imposing supply and demand constraints would inevitably in favor of only one type of product from the nearest source warehouse to destination warehouse, which does not align with the company's strategy since customers only have one option to choose from for each flavor and product category. To resolve that, we need another auxiliary variable to ensure product diversification. A binary decision variable Z is created to represent whether to ship product k from source warehouse i to destination warehouse j. (Note: We were able to incorporate this decision variable only on the sample data, not the full set. Thus, the final output would be transportation cost without taking into consideration of this decision variable.)
+
+###Constraints
+Then we sum up all the product quantity for each Cat_Flavor on the source warehouse as supply. In order to reduce variables to look up, we create another set to store the source warehouse under each Cat_Flavor. This will limit gurobi to only check the source warehouses that contain flavor f instead of all source warehouse.
+
+Similarly, we sum standard case shipped for each Cat_Flavor to each destination warehouse as the demand. And another subset is created to store destination warehouse that needs certain flavor f.
+
+One constraint to ensure each Cat_Flavor has at least two BDC is to enforce the sum of these decision variables to be greater or equal to 2. Nevertheless, optimization only guarantees a minimum of one unit of a second product, which is not significantly different than not using Z. To encounter for that, By using the big M method, not only can we cap product quantity depending on whether Z is zero or one, but we are also able to enforce a lower bound for any item shipped. In this case, we pick 500, which is an arbitrary number that Frito Lay can change depending on other requirements. (Note: We were able to incorporate product diversity constraint only on the sample data, not the full set. Thus, the final output would be transportation cost without taking into consideration of this decision variable.)  
