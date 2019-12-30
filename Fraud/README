@@ -1,0 +1,14 @@
+This project contains a series steps from data cleaning and preprocessing all the way to model building for a fraud detection subject.
+
+#Order of the steps:
+1. Data Cleaning--App_Cleaning_0414
+2. Variable Creations
+a. Count--count_bei
+b. Risk Table Variable--Risk Table Variable
+3. KS--3_KS_FDR_AllVariables
+4. Feature Selection--Feature_Selection
+5. Modeling
+a. Boosted Tree--Boosted Tree_final model
+b. Logistric Regression--logistic_regression
+c. Neural Network--5.Gregy_Multiple_run_Function-v1
+d. Random Forest--Random Forest
